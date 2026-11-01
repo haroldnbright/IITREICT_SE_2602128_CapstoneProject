@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+
+# Database files
+*.db
+backend/data/
+
+# Node
+node_modules/
+dist/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local secrets copy and Claude Code launch config
+local-secrets.txt
+.claude/
+UPLOAD-PLAN.md
