@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./backend
+    container_name: campusbite-backend
+    ports:
+      - "8000:8000"
+    # Secrets are read from backend/.env at runtime, they are never baked into the image
+    env_file:
+      - ./backend/.env
+    environment:
+      # Keep the SQLite database in a named volume so data survives restarts
+      DATABASE_URL: sqlite:////app/data/campusbite.db
+    volumes:
+      - campusbite-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  campusbite-data:
